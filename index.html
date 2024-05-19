@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
- <!-- Favicon -->
- <link rel="shortcut icon" href="../assets/img/61u3uz.png" type="image/x-icon">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/img/61u3uz.png" type="image/x-icon">
 
 
   <title>Ashwin Sharma Portfolio Website</title>
@@ -112,7 +112,8 @@
             <li><b>Gender:</b> Male</li>
           </ul>
           <button class="btn btn-theme-outline"><a
-              href="https://drive.google.com/file/d/12FSx4dJSArLwUP2a-6Uzzo5moaXXQAWW/view?usp=sharing" target="_blank">Download
+              href="https://drive.google.com/file/d/12FSx4dJSArLwUP2a-6Uzzo5moaXXQAWW/view?usp=sharing"
+              target="_blank">Download
               CV</a></button>
         </div>
       </div>
@@ -294,19 +295,21 @@
               <div class="details">
                 <h5>Amazon Web Services</h5>
                 <small class="fg-theme">
-                  <a href="https://www.credly.com/badges/3decbf21-fa48-4366-bcd5-4a208def4fd0/public_url" target="_blank">
+                  <a href="https://www.credly.com/badges/3decbf21-fa48-4366-bcd5-4a208def4fd0/public_url"
+                    target="_blank">
                     Click here to check and verify Certification
                   </a>
                 </small>
               </div>
             </li>
-            
+
             <li>
               <div class="title">AWS Certified Cloud Practitioner</div>
               <div class="details">
                 <h5>Amazon Web Services</h5>
                 <small class="fg-theme"><a
-                    href=" https://www.credly.com/badges/c09ce448-dc8f-4e2c-9705-c2336522540c/public_url" target="_blank">Click here
+                    href=" https://www.credly.com/badges/c09ce448-dc8f-4e2c-9705-c2336522540c/public_url"
+                    target="_blank">Click here
                     to check and verify Certification</a>
                 </small>
 
@@ -418,8 +421,8 @@
           <div class="icon-box">
 
             <p class="description">
-              <a href="https://www.credly.com/badges/c09ce448-dc8f-4e2c-9705-c2336522540c/public_url" target="_blank"><img
-                  src="../assets/img/aws_cp.png" width="300" height="300">
+              <a href="https://www.credly.com/badges/c09ce448-dc8f-4e2c-9705-c2336522540c/public_url"
+                target="_blank"><img src="../assets/img/aws_cp.png" width="300" height="300">
               </a>
             </p>
 
@@ -433,8 +436,8 @@
           <div class="icon-box">
 
             <p class="description">
-              <a href="https://www.credly.com/badges/3decbf21-fa48-4366-bcd5-4a208def4fd0/public_url" target="_blank"><img
-                  src="../assets/img/Sol_arch.png" width="300" height="300">
+              <a href="https://www.credly.com/badges/3decbf21-fa48-4366-bcd5-4a208def4fd0/public_url"
+                target="_blank"><img src="../assets/img/Sol_arch.png" width="300" height="300">
               </a>
             </p>
 
@@ -533,7 +536,7 @@
           </div>
         </div>
 
-        
+
 
         <div class="grid-item Events wow zoomIn">
           <div class="img-place" data-src="../assets/img/work/pic3.jpg" data-fancybox
@@ -620,7 +623,30 @@
 
       </div>
     </div>
-  </div> <!-- End Portfolio page -->
+  </div>
+  <script>
+    window.onload = function () {
+      var grid = document.querySelector('.gridder');
+      var iso;
+
+      imagesLoaded(grid, function () {
+        iso = new Isotope(grid, {
+          itemSelector: '.grid-item',
+          layoutMode: 'fitRows'
+        });
+      });
+
+      new WOW().init();
+
+      document.querySelectorAll('.filterable-button button').forEach(button => {
+        button.addEventListener('click', function () {
+          var filterValue = this.getAttribute('data-filter');
+          iso.arrange({ filter: filterValue });
+          iso.layout();
+        });
+      });
+    };
+  </script> <!-- End Portfolio page -->
 
   <!-- Testimonial -->
   <div class="vg-page page-testimonial">
@@ -633,7 +659,9 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="img-place">
-                    <img src="../assets/img/testimonials/Mr.-Pratik_Patel-img-qb9w8txc511zj7d6a59qxsqz4y6kzjcsogr08nsfc0.jpg" alt="">
+                    <img
+                      src="../assets/img/testimonials/Mr.-Pratik_Patel-img-qb9w8txc511zj7d6a59qxsqz4y6kzjcsogr08nsfc0.jpg"
+                      alt="">
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -645,7 +673,9 @@
                       stability.</div>
                     <div class="testi-info">
                       <div class="thumb-profile">
-                        <img src="../assets/img/testimonials/Mr.-Pratik_Patel-img-qb9w8txc511zj7d6a59qxsqz4y6kzjcsogr08nsfc0.jpg" alt="">
+                        <img
+                          src="../assets/img/testimonials/Mr.-Pratik_Patel-img-qb9w8txc511zj7d6a59qxsqz4y6kzjcsogr08nsfc0.jpg"
+                          alt="">
                       </div>
                       <div class="tagline">
                         <h5 class="mb-0">Pratik Patel</h5>
@@ -755,7 +785,8 @@
             </div>
             <div class="caption">
               <a href="blogpage.html" target="_blank" class="post-category">Technology</a>
-              <a href="blogpage.html" target="_blank" class="post-title">Unlocking AWS Certification: Essential Tips and Tricks for
+              <a href="blogpage.html" target="_blank" class="post-title">Unlocking AWS Certification: Essential Tips and
+                Tricks for
                 Solutions Architect Associate Exam SAA-C03</a>
               <span class="post-date"><span class="sr-only">Published on</span> Aug, 2023</span>
             </div>
@@ -768,7 +799,8 @@
             </div>
             <div class="caption">
               <a href="blogpage2.html" target="_blank" class="post-category">Technology</a>
-              <a href="blogpage2.html" target="_blank" class="post-title">Cloud Dreams to Reality: My AWS Cloud Practitioner Journey</a>
+              <a href="blogpage2.html" target="_blank" class="post-title">Cloud Dreams to Reality: My AWS Cloud
+                Practitioner Journey</a>
               <span class="post-date"><span class="sr-only">Published on</span> Jan, 2023</span>
             </div>
           </div>
@@ -780,7 +812,8 @@
             </div>
             <div class="caption">
               <a href="blogpage3.html" target="_blank" class="post-category">Technology</a>
-              <a href="blogpage3.html" target="_blank" class="post-title">Achieving Unifies Data Integration Mastery: Airbyte, AWS, and Amazon S3</a>
+              <a href="blogpage3.html" target="_blank" class="post-title">Achieving Unifies Data Integration Mastery:
+                Airbyte, AWS, and Amazon S3</a>
               <span class="post-date"><span class="sr-only">Published on</span> Mar, 2023</span>
             </div>
           </div>
@@ -792,7 +825,8 @@
             </div>
             <div class="caption">
               <a href="blogpage4.html" target="_blank" class="post-category">Technology</a>
-              <a href="blogpage4.html" target="_blank" class="post-title">Blog 4 Testing : Achieving Unifies Data Integration Mastery: Airbyte, AWS, and Amazon S3</a>
+              <a href="blogpage4.html" target="_blank" class="post-title">Blog 4 Testing : Achieving Unifies Data
+                Integration Mastery: Airbyte, AWS, and Amazon S3</a>
               <span class="post-date"><span class="sr-only">Published on</span> Mar, 2023</span>
             </div>
           </div>
@@ -901,7 +935,7 @@
 
   <!-- <script src="../assets/vendor/perfect-scrollbar/js/perfect-scrollbar.js"></script> -->
 
-  <script src="../assets/vendor/isotope/isotope.pkgd.min.js"></script> 
+  <script src="../assets/vendor/isotope/isotope.pkgd.min.js"></script>
 
   <script src="../assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
 
@@ -916,6 +950,11 @@
   <script src="../assets/js/google-maps.js"></script>
 
   <script src="../assets/js/topbar-virtual.js"></script>
+
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
 
   <!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script> -->
