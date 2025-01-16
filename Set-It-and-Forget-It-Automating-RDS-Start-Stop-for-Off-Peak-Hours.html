@@ -87,29 +87,41 @@
             <div>
                 <div style="margin-right: 10px; margin-left: 11px">
                     <h1 class="fw-light">Set It and Forget It: Automating RDS Start/Stop for Off-Peak Hours</h1>
-                    <h5 class="fg-theme mb-3">By Ashwin Sharma, July 2024</h5>
+                    <h5 class="fg-theme mb-3">By Ashwin Sharma</h5>
 
                     <div class="testi-content">
                         <h3>Efficient Cloud Resource Management: How Automating RDS Start/Stop Can Save You Money</h3>
                         <p>Managing cloud resources efficiently is key to keeping costs under control while maximizing performance. One effective way to achieve this is by automating the start and stop schedules of your Amazon RDS instances using AWS Lambda. Here’s why this strategy is so valuable and how it can benefit your organization in straightforward terms.</p>
 
-                        <h2>Cost Optimization and Resource Efficiency: Saving Money by Turning Things Off</h2>
+                        <h3>Cost Optimization and Resource Efficiency: Saving Money by Turning Things Off</h3>
                         <p>Think of it like leaving the lights on in your home when you're not there — it wastes energy and increases your bills. Similarly, running your Amazon RDS instances 24/7, even when they’re not in use, can significantly drive up costs. By automating the process of shutting down these instances during off-hours or periods of inactivity, you can make a substantial dent in your cloud spending.</p>
 
-                        <h2>Automation and Flexibility: Letting AWS Lambda Handle the Repetitive Tasks</h2>
+                        <h3>Automation and Flexibility: Letting AWS Lambda Handle the Repetitive Tasks</h3>
                         <p>Manual tasks are often tedious and prone to human error. AWS Lambda helps solve this by automating the start/stop process for your RDS instances. Instead of remembering to turn them off at night or over weekends, Lambda takes care of it automatically, ensuring that your instances are only running when needed — all without requiring any intervention from you.</p>
                         <h3>Scalability: Adjusting Automatically to Your Needs</h3>
                         <p>AWS Lambda’s ability to scale automatically is another major advantage. Whether you have a handful of RDS instances or a more complex, larger setup, Lambda adjusts to meet your needs. This flexibility ensures that your automation workflows continue to work seamlessly, no matter the size or complexity of your infrastructure.</p>
                         <h3>Security and Compliance: Being Smart About When Resources Are Active</h3>
                         <p>Turning off RDS instances when they’re not in use also adds a layer of security to your cloud environment. With fewer instances running, there’s less surface area for potential cyber-attacks or vulnerabilities. Moreover, automating the start/stop schedule helps you stay compliant with internal policies and external regulations, ensuring that your resources are only accessible during the hours they should be..</p>
                         
-                        <h2>Architecture diagram:-</h2>
+                        <h3>Architecture diagram:-</h3>
                         <img src="../assets/img/work/Blank diagram.png" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>     
                         
-                        <h2>What You Need Before You Start:-</h2>
+                        <h3>What You Need Before You Start:-</h3>
                         <p>Make sure you have the following:</p>
                         <b>1. An AWS account</b> with admin access to Amazon RDS.<br>
                         <b>2. An RDS database instance</b> like “example-1”, which I already have set up.<br>
+
+                        <img src="../assets/img/work/1_djxT-vDi0P94kEkk84XAOA.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        
+                        <h3>Step 1 — Assign Tags to the RDS Database Instance</h3>
+
+                        <img src="../assets/img/work/image1.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+
+                        <p>Go to the <strong>Amazon RDS Console</strong> and select the database. Then, choose the DB instance that you want to add tags to.</p>
+                        <p>In the <strong>Tags</strong> section, click on <strong>Add tags.</strong></p>
+                        <p>For the <strong>Tag Key</strong>, type AutoStart and AutoStop. For the <strong>Value</strong>, type True, then click on <strong>Add.</strong></p>
+
+                        <img src="../assets/img/work/image2.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                     </div>
                         
                     
