@@ -111,42 +111,42 @@
                         <p>You’ll use an <strong>Amazon S3 Bucket</strong> to store your website files. To get started, go to the AWS Management Console, search for S3 in the search bar at the top, and select it from the list of services.</p>
                         <img src="../assets/img/work/image8.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                         <br>
-                        <p>On the next page, click on Create Bucket.</p>
-                        <p>On the Create bucket page, fill in the following details:</p>
-                        <p>Bucket name: Enter your domain name (e.g., example.com).</p>
-                        <p>AWS Region: Choose the region that’s closest to your location for better performance.</p>
-                        <p>Scroll down to the Block Public Access settings for this bucket section. By default, this will be set to Block public access.</p>
-                        <p>Uncheck the box to allow public access to the bucket, making it accessible for others to view your website.</p>
-                        <p>Scroll down a little more and check the box to confirm you understand the warning about enabling public access.</p>
+                        <p>- On the next page, click on <strong>Create Bucket.</strong></p>
+                        <p>- On the <strong>Create bucket</strong> page, fill in the following details:</p>
+                        <p><strong>Bucket name:</strong> Enter your <strong>domain name</strong> (e.g., example.com).</p>
+                        <p><strong>- AWS Region:</strong> Choose the region that’s closest to your location for better performance.</p>
+                        <p>- Scroll down to the <strong>Block Public Access settings for this bucket</strong> section. By default, this will be set to <strong>Block public access.</strong></p>
+                        <p>- Uncheck the box to allow public access to the bucket, making it accessible for others to view your website.</p>
+                        <p>- Scroll down a little more and check the box to confirm you understand the warning about enabling public access.</p>
                         <br>
                         <img src="../assets/img/work/image9.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
-                        <p>Scroll to the bottom of the page and click on Create Bucket.</p>
-                        <p>After the bucket is created, you should see your domain name listed as the bucket name.</p>
-                        <p>Next, click on your bucket name to open the bucket settings and make necessary adjustments.</p>
-                        <p>In the bucket list, find and click on your bucket name.</p>
-                        <p>Go to the Properties tab, then scroll down to the Static website hosting section.</p>
+                        <p>- Scroll to the bottom of the page and click on <strong>Create Bucket.</strong></p>
+                        <p>- After the bucket is created, you should see your domain name listed as the bucket name.</p>
+                        <p>- Next, click on your bucket name to open the bucket settings and make necessary adjustments.</p>
+                        <p>- In the bucket list, find and click on your bucket name.</p>
+                        <p>- Go to the <strong>Properties</strong> tab, then scroll down to the <strong>Static website hosting</strong> section.</p>
                         <br>
                         <img src="../assets/img/work/image10.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                         <br>
                         <img src="../assets/img/work/image11.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                         <br>
-                        <p>In the <strong>Static website hosting,</strong> click on the <strong>Edit</strong> button.</p>
+                        <p>- In the <strong>Static website hosting,</strong> click on the <strong>Edit</strong> button.</p>
                         <br>
                         <img src="../assets/img/work/image12.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                         <br>
-                        <p>Enable static website hosting by selecting <strong>Enable.</strong></p>
+                        <p>- Enable static website hosting by selecting <strong>Enable.</strong></p>
                         <br>
                         <img src="../assets/img/work/image13.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                         <br>
-                        <p>In the <strong>Index document</strong> field, type index.html.</p>
+                        <p>- In the <strong>Index document</strong> field, type index.html.</p>
                         <br>
                         <strong>Create a Bucket Policy</strong>
-                        <p>Go to the <strong>Permissions</strong> tab of your bucket.</p>
-                        <p>Scroll down to the <strong>Bucket Policy</strong> section and click on <strong>Edit.</strong></p>
+                        <p>1. Go to the <strong>Permissions</strong> tab of your bucket.</p>
+                        <p>2. Scroll down to the <strong>Bucket Policy</strong> section and click on <strong>Edit.</strong></p>
                         <img src="../assets/img/work/image14.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                         <br>
-                        <p>Copy the code below and paste it into the <strong>Bucket Policy</strong> field in the AWS console.</p>
-                        <p>Make sure to replace <strong>Bucket-Name</strong> with the name of your S3 bucket that you configured earlier.</p>
+                        <p>- Copy the code below and paste it into the <strong>Bucket Policy</strong> field in the AWS console.</p>
+                        <p>- Make sure to replace <strong>Bucket-Name</strong> with the name of your S3 bucket that you configured earlier.</p>
                         <pre>
                             {
                                 “Version”: “2012–10–17”,
@@ -169,20 +169,20 @@
                         <img src="../assets/img/work/image15.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                         <br>
                         <strong>Redirect the Custom Domain to the S3 Bucket URL</strong>
-                        <p>1. Next, go to Route 53 to set up the DNS record for your custom domain, so it redirects to your S3 bucket website.</p>
-                        <p>2. In the top search bar of the AWS console, type Route 53 and select it from the list of services.</p>
-                        <p>3. From the Route 53 Dashboard, click on Hosted Zones.</p>
-                        <p>4. In the Hosted Zones section, click on your domain name.</p>
-                        <p>5. Click on Create Record.</p>
-                        <p>6. On the Create record page, create an alias record for your root domain so it redirects to your S3 bucket. Enter the following details:</p>
+                        <p>1. Next, go to <strong>Route 53</strong> to set up the DNS record for your custom domain, so it redirects to your S3 bucket website.</p>
+                        <p>2. In the top search bar of the AWS console, type <strong>Route 53</strong> and select it from the list of services.</p>
+                        <p>3. From the <strong>Route 53 Dashboard,</strong>, click on <strong>Hosted Zones.</strong></p>
+                        <p>4. In the <strong>Hosted Zones</strong> section, click on your <strong>domain name.</strong></p>
+                        <p>5. Click on <strong>Create Record.</strong></p>
+                        <p>6. On the <strong>Create record</strong> page, create an alias record for your root domain so it redirects to your S3 bucket. Enter the following details:</p>
                         <br>
-                        <p>- Alias: Toggle the switch to on.</p>
-                        <p>- Route traffic to: Select Alias to S3 endpoint.</p>
-                        <p>- Region: Choose the region for your S3 endpoint.</p>
-                        <p>- Enter S3 endpoint: Select your S3 bucket from the list.</p>
-                        <p>- Routing Policy: Choose Simple Routing.</p>
+                        <p>- <strong>Alias:</strong> Toggle the switch to <strong>on.</strong></p>
+                        <p>- <strong>Route traffic to:</strong> Select <strong>Alias to S3 endpoint.</strong></p>
+                        <p>- <strong>Region:</strong> Choose the region for your S3 endpoint.</p>
+                        <p>- <strong>Enter S3 endpoint:</strong> Select your S3 bucket from the list.</p>
+                        <p>- <strong>Routing Policy:</strong> Choose <strong>Simple Routing.</strong></p>
                         <br>
-                        <p>Click on Create records.</p>
+                        <p>1. Click on <strong>Create records.</strong></p>
                         <br>
                         <p>You should now see a confirmation that the DNS record for your domain was successfully created.</p>
                         <br>
@@ -190,53 +190,53 @@
                         <p>1. Open your web browser and enter the Fully Qualified Domain Name (FQDN) of your domain.</p>
                         <p>2. Your website should be live once the DNS records have finished propagating. Congratulations! You’ve successfully hosted a static website on Amazon S3!</p>
                         <br>
-                        <p>Note: If you see a warning that your website is unsecured, don’t worry. This happens because the site doesn’t have an SSL certificate yet. To fix this, we can request a free SSL certificate through Amazon Certificate Manager (ACM). Let’s go ahead and do that!</p>
+                        <p><strong>Note:</strong> If you see a warning that your website is unsecured, don’t worry. This happens because the site doesn’t have an SSL certificate yet. To fix this, we can request a free SSL certificate through Amazon Certificate Manager (ACM). Let’s go ahead and do that!</p>
                         <br>
                         <strong>Step 4: Request a Certificate from AWS Certificate Manager (ACM)</strong>
-                        <p>Amazon Certificate Manager (ACM) is a service that helps you manage and deploy SSL/TLS certificates to secure your website. These certificates help browsers establish secure connections with your site.</p>
+                        <p><strong>Amazon Certificate Manager (ACM)</strong> is a service that helps you manage and deploy SSL/TLS certificates to secure your website. These certificates help browsers establish secure connections with your site.</p>
                         <br>
-                        <p>1. In the AWS Management Console, search for Certificate Manager in the top search bar and select it from the list of services.</p>
-                        <p>2. Important: Ensure you’re in the US East (Virginia) region when requesting the certificate.</p>
-                        <p>3. Click on Request a certificate.</p>
-                        <p>4. Select the first option: Request a public certificate, then click Next.</p>
-                        <p>5. In the Domain names section, enter your Fully Qualified Domain Name (FQDN) (e.g., www.yourdomain.com).</p>
-                        <p>6. Scroll down to the Validation method section and choose DNS validation (this is the recommended and easiest method for validating your domain).</p>
-                        <p>7. Scroll down to Key algorithm and choose RSA 2048 for encryption.</p>
-                        <p>8. Click on Request.</p>
+                        <p>1. In the AWS Management Console, search for <strong>Certificate Manager</strong> in the top search bar and select it from the list of services.</p>
+                        <p>2. <strong>Important:</strong> Ensure you’re in the <strong>US East (Virginia)</strong> region when requesting the certificate.</p>
+                        <p>3. Click on <strong>Request a certificate.</strong></p>
+                        <p>4. Select the first option: <strong>Request a public certificate,</strong> then click <strong>Next.</strong></p>
+                        <p>5. In the <strong> Domain names</strong> section, enter your <strong>Fully Qualified Domain Name (FQDN)</strong> (e.g., www.yourdomain.com).</p>
+                        <p>6. Scroll down to the <strong>Validation method</strong> section and choose <strong>DNS validation</strong> (this is the recommended and easiest method for validating your domain).</p>
+                        <p>7. Scroll down to <strong>Key algorithm</strong> and choose <strong>RSA 2048</strong> for encryption.</p>
+                        <p>8. Click on <strong>Request.</strong></p>
                         <br>
                         <p>Once the request is successful, you’ll see a message confirming the certificate was requested. It will show as Pending validation.</p>
                         <br>
-                        <p>1. Click on the certificate ID in the list, and on the details page, scroll to the Domains section.</p>
-                        <p>2. Click on Create records in Route 53 to let ACM automatically create the required DNS record for validation.</p>
-                        <p>3. On the next page, check the box next to your domain name, then click Create Record.</p>
-                        <p>4. After this, your domain validation status will show as Success and the certificate will be marked as Issued.</p>
+                        <p>1. Click on the certificate ID in the list, and on the details page, scroll to the <strong>Domains</strong> section.</p>
+                        <p>2. Click on <strong>Create records in Route 53</strong> to let ACM automatically create the required DNS record for validation.</p>
+                        <p>3. On the next page, check the box next to your domain name, then click <strong>Create Record.</strong></p>
+                        <p>4. After this, your domain validation status will show as <strong>Success</strong> and the certificate will be marked as <strong>Issued.</strong></p>
                         <br>
                         <strong>Step 5: Add CloudFront Distribution</strong>
-                        <p>1. Now that you have an SSL certificate, we need to create a CloudFront distribution to use it and secure the access to your website</p>
-                        <p>2. In the AWS Console, search for CloudFront in the search bar and select it from the list.</p>
-                        <p>3. On the CloudFront dashboard, click on the Create Distribution button.</p>
-                        <p>4. In the Origin domain field, select your S3 bucket’s URL.</p>
+                        <p>1. Now that you have an SSL certificate, we need to create a <strong>CloudFront distribution</strong> to use it and secure the access to your website</p>
+                        <p>2. In the AWS Console, search for <strong>CloudFront</strong> in the search bar and select it from the list.</p>
+                        <p>3. On the CloudFront dashboard, click on the <strong>Create Distribution</strong> button.</p>
+                        <p>4. In the <strong>Origin domain</strong> field, select your S3 bucket’s URL.</p>
                         <p>5. You’ll be prompted to change your S3 static site to a website endpoint. Click on the button to complete this conversion.</p>
                         <p>6. After the change, your origin domain name will include “website” in the URL.</p>
-                        <p>7. Scroll down to the Default Cache Behavior section and set the options as follows (you can leave them as defaults unless you have specific needs).</p>
-                        <p>8. In the Custom SSL Certificate section, choose the SSL certificate you created earlier.</p>
-                        <p>9. Scroll to the bottom and click Create Distribution.</p>
+                        <p>7. Scroll down to the <strong>Default Cache Behavior</strong> section and set the options as follows (you can leave them as defaults unless you have specific needs).</p>
+                        <p>8. In the <strong>Custom SSL Certificate</strong> section, choose the SSL certificate you created earlier.</p>
+                        <p>9. Scroll to the bottom and click <strong>Create Distribution.</strong></p>
                         <br>
                         <p>Once created, you should see a banner indicating the distribution was successfully created.</p>
                         <br>
                         <strong>Step 6: Update DNS Record to Point to CloudFront Distribution</strong>
-                        <p>In this final step, you will update your DNS records to point to the CloudFront distribution for secure access to your website.</p>
+                        <p>In this final step, you will update your DNS records to point to the <strong>CloudFront distribution</strong> for secure access to your website.</p>
                         <br>
-                        <p>In the AWS Console, search for Route 53 and select it from the list of services.</p>
-                        <p>From the Route 53 Dashboard, click on Hosted Zones.</p>
-                        <p>Select your domain name from the list of hosted zones.</p>
-                        <p>Click the checkbox next to your A record.</p>
-                        <p>In the Edit pane, modify the Route traffic to field to Alias to CloudFront distribution and click Save.</p>
+                        <p>In the AWS Console, search for <strong>Route 53</strong> and select it from the list of services.</p>
+                        <p>From the <strong>Route 53 Dashboard,</strong> click on <strong>Hosted Zones.</strong></p>
+                        <p>Select your <strong>domain name</strong> from the list of hosted zones.</p>
+                        <p>Click the checkbox next to your <strong>A record.</strong></p>
+                        <p>In the <strong>Edit</strong> pane, modify the <strong>Route traffic to</strong> field to <strong>Alias to CloudFront distribution</strong> and click <strong>Save.</strong></p>
                         <br>
                         <strong>Final Thoughts</strong>
-                        <p>Congratulations! You’ve successfully deployed a secure static website on AWS using S3, ACM for SSL, CloudFront for content delivery, and Route 53 for DNS management.</p>
+                        <p>Congratulations! You’ve successfully deployed a secure static website on AWS using <strong>S3, ACM</strong> for SSL, <strong>CloudFront</strong> for content delivery, and <strong>Route 53</strong> for DNS management.</p>
                         <br>
-                        <p>Feel free to create your own index.html page or use an HTML template to customize your website. Once everything is set up, your website should be accessible securely with HTTPS.</p>
+                        <p>Feel free to create your own <strong>index.html</strong> page or use an HTML template to customize your website. Once everything is set up, your website should be accessible securely with HTTPS.</p>
                         <br>
                         <p>Happy Learning!</p>
 
