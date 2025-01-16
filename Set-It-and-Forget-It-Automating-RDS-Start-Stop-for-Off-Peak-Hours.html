@@ -127,18 +127,18 @@
                         
 
                         <img src="../assets/img/work/image1.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
-
+                        <br>
                         <p>- Go to the <strong>Amazon RDS Console</strong> and select the database. Then, choose the DB instance that you want to add tags to.</p>
-                        <br>- In the <strong>Tags</strong> section, click on <strong>Add tags.</strong>
+                        <p>- In the <strong>Tags</strong> section, click on <strong>Add tags.</strong></p>
                         <br>- For the <strong>Tag Key</strong>, type AutoStart and AutoStop. For the <strong>Value</strong>, type True, then click on <strong>Add.</strong>
                         <br>
                         <img src="../assets/img/work/image2.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                     </div>
                         <br>
                         <strong>Step 2 — Create an IAM Policy and Role for Lambda</strong>
-                        <p>Now, we’ll create an IAM policy and a role that allows AWS Lambda to start and stop your RDS instances.</p>
-                        <br>
-                        <p>1. Open the IAM console. In the left-hand menu under Access Management, click on Policies and then select Create Policy.</p>                    
+                    
+                        <p>Now, we’ll create an IAM policy and a role that allows AWS Lambda to start and stop your RDS instances.
+                        <br>1. Open the IAM console. In the left-hand menu under Access Management, click on Policies and then select Create Policy.</p>                    
                     
                         <img src="../assets/img/work/image3.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                         <br>
@@ -146,11 +146,11 @@
                         <p>Next, we will create an IAM policy and role that allows AWS Lambda to start and stop the RDS instances</p>
                 
                         <p>1. Open the IAM console and, from the left-hand navigation, click on Policies under Access Management. Then click on Create Policy.</p>
-                        <br>
                         <p>2. In the Create Policy screen, choose the JSON tab to define a custom policy.</p>
                         <p>3. Copy and paste the following JSON policy into the editor:</p>
                         <br>
-                        <pre>{
+                        <pre>
+                            {
                             “Version”: “2012–10–17”,
                             “Statement”: [
                             {
@@ -171,7 +171,8 @@
                             “Resource”: “*”
                             }
                             ]
-                            }</pre>
+                            }
+                        </pre>
                             <br>
                             <p>After pasting the policy, click on Review Policy and give the policy a name (e.g., LambdaRDSStartStopPolicy), then click Create Policy.</p>
                             <br>
@@ -182,27 +183,24 @@
                             
                             <p>2. In the left-hand menu, click on Roles.</p>
                             
-                            <p>Click on <strong>Create role.</strong></p>
+                            <p>3. Click on <strong>Create role.</strong></p>
                             
-                            <p>Choose <strong>Lambda</strong> as the trusted service that will use this role.</p>
+                            <p>4. Choose <strong>Lambda</strong> as the trusted service that will use this role.</p>
                             
-                            <p>Click on <strong>Next: Permissions</strong> to move to the next step.</p>
+                            <p>5. Click on <strong>Next: Permissions</strong> to move to the next step.</p>
                             
-                            <p>Now, you have created an IAM role with the required permissions for your Lambda function to start and stop Amazon RDS instances.</p>
+                            <p>6. Now, you have created an IAM role with the required permissions for your Lambda function to start and stop Amazon RDS instances.</p>
                             
-                            <p>When you create or update your Lambda function in the AWS Lambda console, make sure to assign this IAM role to the function.</p>
+                            <p>7. When you create or update your Lambda function in the AWS Lambda console, make sure to assign this IAM role to the function.</p>
                             
-                            
+                            <br>
                             <strong>Create a Lambda Function to Stop the Database</strong>
                             <p>We will create two Lambda functions: one for stopping the database and another for starting it. First, let’s focus on creating the function to stop the database.</p>
-                            <br>
                             <p>1. Open the <strong>Lambda console.</strong> In the left-hand menu, click on Functions, then click on <strong>Create function.</strong></p>
-
                             <br>
                             <img src="../assets/img/work/image4.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                             <br>
                             <p>2. Select <strong>Author from scratch.</strong></p>
-                            <br>
                             <p>3. Give your function a name (e.g., StopRDSInstanceFunction), choose <strong>Python</strong> as the runtime, and under <strong>Existing role,</strong> select the IAM role you created earlier (e.g., LambdaRDSStartStopRole).</p>
                             
                             <p>4. On the <strong>Function details</strong> page, go to the <strong>Function code</strong> section.</p>
@@ -211,7 +209,8 @@
                             
                             <p>6.Copy and paste the following code to stop the RDS instance into the code editor:</p>
                             <br>
-                            <pre>import boto3
+                            <pre>
+                                import boto3
                                 rds = boto3.client(‘rds’)
                                 
                                 def lambda_handler(event, context):
@@ -233,7 +232,8 @@
                                 print(e)
                                 
                                 if __name__ == “__main__”:
-                                lambda_handler(None, None)</pre>
+                                lambda_handler(None, None)
+                            </pre>
                             <br>
                             <img src="../assets/img/work/image5.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                             <br>
@@ -251,7 +251,8 @@
                             
                             <p>2. Copy and paste the code to start RDS instances into the code editor.</p>
                             
-                            <pre>import boto3
+                            <pre>
+                                import boto3
                                 rds = boto3.client(‘rds’)
                                 
                                 def lambda_handler(event, context):
@@ -275,7 +276,8 @@
                                 if __name__ == “__main__”:
                                 lambda_handler(None, None)
                                 
-                                This code checks all RDS instances and starts those with the tag AutoStart=True.</pre>
+                                This code checks all RDS instances and starts those with the tag AutoStart=True.
+                            </pre>
                                 <br>
                             <p>3. Click on <strong>Deploy</strong> to create and save your Lambda function.</p>
                             
