@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <title>Ashwin Sharma Portfolio Website</title>
+
+    <link rel="shortcut icon" href="../assets/img/61u3uz.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/themify-icons.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/animate/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/owl-carousel/owl.carousel.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/perfect-scrollbar/css/perfect-scrollbar.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/nice-select/css/nice-select.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/vendor/fancybox/css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/virtual.css">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/topbar.virtual.css">
+</head>
+
+<body class="theme-red">
+
+    <!-- Back to top button -->
+    <div class="btn-back_to_top">
+        <span class="ti-arrow-up"></span>
+    </div>
+
+
+        <div class="vg-page page-home" id="home" style="background-image: url(../assets/img/new2.jpg);background-size: cover;">
+        <!-- Navbar -->
+        <div class="navbar navbar-expand-lg navbar-dark sticky" data-offset="500">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">Ashwin Sharma</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar" aria-expanded="true">
+                    <span class="ti-menu"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a href="#home" class="nav-link" data-animate="scrolling">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link" data-animate="scrolling">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#portfolio" class="nav-link" data-animate="scrolling">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#blog" class="nav-link" data-animate="scrolling">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link" data-animate="scrolling">Contact</a>
+                        </li>
+                    </ul>
+                    <!-- <ul class="nav ml-auto">
+            <li class="nav-item">
+              <button class="btn btn-fab btn-theme no-shadow">En</button>
+            </li>
+          </ul> -->
+                </div>
+            </div>
+        </div> <!-- End Navbar -->
+        <!-- Caption header -->
+        <div class="caption-header text-center wow zoomInDown">
+            <h5 class="fg-theme">Welcome to my blog</h5>
+            <h3 class="fw-light mb-4">Boost Website Performance and Security with S3 Hosting, SSL, CloudFront, and Route 53</h3>
+            <div class="badge">By Ashwin Sharma</div>
+        </div> <!-- End Caption header -->
+
+    </div>
+
+    <div class="vg-page page-about" id="about">
+        <div class="container py-5">
+            <div>
+                <div style="margin-right: 10px; margin-left: 11px">
+                    <h1 class="fw-light">Boost Website Performance and Security with S3 Hosting, SSL, CloudFront, and Route 53</h1>
+                    <h5 class="fg-theme mb-3">By Ashwin Sharma</h5>
+
+                    <div class="testi-content">
+                        <br>
+                        <p>In this guide, I’ll walk you through how to set up a secure static website on AWS. We’ll start by using <strong>Amazon S3</strong> to store and host the website files. Then, we’ll get a custom domain name and manage DNS settings with <strong>Amazon Route 53.</strong> To make sure your site is secure, we’ll add an <strong>SSL certificate.</strong> Finally, we’ll use <strong>CloudFront</strong> to deliver your website’s content quickly and efficiently.</p>
+                        <br>
+                        <img src="../assets/img/work/image7.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>     
+                        
+                        <strong>Prerequisites:</strong>
+                        <p>You’ll need an <strong>Amazon Web Services (AWS)</strong> account to get started.</p>
+                        <br>
+                        <strong>Services Used:</strong>
+                        <b>
+                        <p><strong>- Amazon S3</strong> for hosting your website files</p>
+                        <p><strong>- Amazon Route 53</strong> for managing your domain and DNS</p>
+                        <p><strong>- AWS Certificate Manager (ACM)</strong> for securing your site with an SSL certificate</p>
+                        <p><strong>- Amazon CloudFront</strong> for fast and efficient content delivery</p>
+                        <br>
+                        <strong>Create an Amazon S3 Bucket</strong>
+                        <p><strong>Amazon S3</strong> (Simple Storage Service) is a cloud storage service from AWS that lets you store and retrieve files easily over the internet. It’s perfect for various needs like backups, archiving, big data analysis, and distributing content. With S3, you can store data in different formats and scales, and it offers high durability and availability.</p>
+                        <br>
+                        <p>You’ll use an <strong>Amazon S3 Bucket</strong> to store your website files. To get started, go to the AWS Management Console, search for S3 in the search bar at the top, and select it from the list of services.</p>
+                        <img src="../assets/img/work/image8.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        <br>
+                        <p>On the next page, click on Create Bucket.</p>
+                        <p>On the Create bucket page, fill in the following details:</p>
+                        <p>Bucket name: Enter your domain name (e.g., example.com).</p>
+                        <p>AWS Region: Choose the region that’s closest to your location for better performance.</p>
+                        <p>Scroll down to the Block Public Access settings for this bucket section. By default, this will be set to Block public access.</p>
+                        <p>Uncheck the box to allow public access to the bucket, making it accessible for others to view your website.</p>
+                        <p>Scroll down a little more and check the box to confirm you understand the warning about enabling public access.</p>
+                        <br>
+                        <img src="../assets/img/work/image9.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        <p>Scroll to the bottom of the page and click on Create Bucket.</p>
+                        <p>After the bucket is created, you should see your domain name listed as the bucket name.</p>
+                        <p>Next, click on your bucket name to open the bucket settings and make necessary adjustments.</p>
+                        <p>In the bucket list, find and click on your bucket name.</p>
+                        <p>Go to the Properties tab, then scroll down to the Static website hosting section.</p>
+                        <br>
+                        <img src="../assets/img/work/image10.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        <br>
+                        <img src="../assets/img/work/image11.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        <br>
+                        <p>In the <strong>Static website hosting,</strong> click on the <strong>Edit</strong> button.</p>
+                        <br>
+                        <img src="../assets/img/work/image12.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        <br>
+                        <p>Enable static website hosting by selecting <strong>Enable.</strong></p>
+                        <br>
+                        <img src="../assets/img/work/image13.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        <br>
+                        <p>In the <strong>Index document</strong> field, type index.html.</p>
+                        <br>
+                        <strong>Create a Bucket Policy</strong>
+                        <p>Go to the <strong>Permissions</strong> tab of your bucket.</p>
+                        <p>Scroll down to the <strong>Bucket Policy</strong> section and click on <strong>Edit.</strong></p>
+                        <img src="../assets/img/work/image14.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        <br>
+                        <p>Copy the code below and paste it into the <strong>Bucket Policy</strong> field in the AWS console.</p>
+                        <p>Make sure to replace <strong>Bucket-Name</strong> with the name of your S3 bucket that you configured earlier.</p>
+                        <pre>
+                            {
+                                “Version”: “2012–10–17”,
+                                “Statement”: [
+                                {
+                                “Sid”: “PublicReadGetObject”,
+                                “Effect”: “Allow”,
+                                “Principal”: “*”,
+                                “Action”: [
+                                “s3:GetObject”
+                                ],
+                                “Resource”: [
+                                “arn:aws:s3:::Bucket-Name/*”
+                                ]
+                                }
+                                ]
+                                }
+                        </pre>
+                        <br>
+                        <img src="../assets/img/work/image15.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        <br>
+                        <strong>Redirect the Custom Domain to the S3 Bucket URL</strong>
+                        <p>1. Next, go to Route 53 to set up the DNS record for your custom domain, so it redirects to your S3 bucket website.</p>
+                        <p>2. In the top search bar of the AWS console, type Route 53 and select it from the list of services.</p>
+                        <p>3. From the Route 53 Dashboard, click on Hosted Zones.</p>
+                        <p>4. In the Hosted Zones section, click on your domain name.</p>
+                        <p>5. Click on Create Record.</p>
+                        <p>6. On the Create record page, create an alias record for your root domain so it redirects to your S3 bucket. Enter the following details:</p>
+                        <br>
+                        <p>- Alias: Toggle the switch to on.</p>
+                        <p>- Route traffic to: Select Alias to S3 endpoint.</p>
+                        <p>- Region: Choose the region for your S3 endpoint.</p>
+                        <p>- Enter S3 endpoint: Select your S3 bucket from the list.</p>
+                        <p>- Routing Policy: Choose Simple Routing.</p>
+                        <br>
+                        <p>Click on Create records.</p>
+                        <br>
+                        <p>You should now see a confirmation that the DNS record for your domain was successfully created.</p>
+                        <br>
+                        <strong>Test Your Website URL</strong>
+                        <p>1. Open your web browser and enter the Fully Qualified Domain Name (FQDN) of your domain.</p>
+                        <p>2. Your website should be live once the DNS records have finished propagating. Congratulations! You’ve successfully hosted a static website on Amazon S3!</p>
+                        <br>
+                        <p>Note: If you see a warning that your website is unsecured, don’t worry. This happens because the site doesn’t have an SSL certificate yet. To fix this, we can request a free SSL certificate through Amazon Certificate Manager (ACM). Let’s go ahead and do that!</p>
+                        <br>
+                        <strong>Step 4: Request a Certificate from AWS Certificate Manager (ACM)</strong>
+                        <p>Amazon Certificate Manager (ACM) is a service that helps you manage and deploy SSL/TLS certificates to secure your website. These certificates help browsers establish secure connections with your site.</p>
+                        <br>
+                        <p>1. In the AWS Management Console, search for Certificate Manager in the top search bar and select it from the list of services.</p>
+                        <p>2. Important: Ensure you’re in the US East (Virginia) region when requesting the certificate.</p>
+                        <p>3. Click on Request a certificate.</p>
+                        <p>4. Select the first option: Request a public certificate, then click Next.</p>
+                        <p>5. In the Domain names section, enter your Fully Qualified Domain Name (FQDN) (e.g., www.yourdomain.com).</p>
+                        <p>6. Scroll down to the Validation method section and choose DNS validation (this is the recommended and easiest method for validating your domain).</p>
+                        <p>7. Scroll down to Key algorithm and choose RSA 2048 for encryption.</p>
+                        <p>8. Click on Request.</p>
+                        <br>
+                        <p>Once the request is successful, you’ll see a message confirming the certificate was requested. It will show as Pending validation.</p>
+                        <br>
+                        <p>1. Click on the certificate ID in the list, and on the details page, scroll to the Domains section.</p>
+                        <p>2. Click on Create records in Route 53 to let ACM automatically create the required DNS record for validation.</p>
+                        <p>3. On the next page, check the box next to your domain name, then click Create Record.</p>
+                        <p>4. After this, your domain validation status will show as Success and the certificate will be marked as Issued.</p>
+                        <br>
+                        <strong>Step 5: Add CloudFront Distribution</strong>
+                        <p>1. Now that you have an SSL certificate, we need to create a CloudFront distribution to use it and secure the access to your website</p>
+                        <p>2. In the AWS Console, search for CloudFront in the search bar and select it from the list.</p>
+                        <p>3. On the CloudFront dashboard, click on the Create Distribution button.</p>
+                        <p>4. In the Origin domain field, select your S3 bucket’s URL.</p>
+                        <p>5. You’ll be prompted to change your S3 static site to a website endpoint. Click on the button to complete this conversion.</p>
+                        <p>6. After the change, your origin domain name will include “website” in the URL.</p>
+                        <p>7. Scroll down to the Default Cache Behavior section and set the options as follows (you can leave them as defaults unless you have specific needs).</p>
+                        <p>8. In the Custom SSL Certificate section, choose the SSL certificate you created earlier.</p>
+                        <p>9. Scroll to the bottom and click Create Distribution.</p>
+                        <br>
+                        <p>Once created, you should see a banner indicating the distribution was successfully created.</p>
+                        <br>
+                        <strong>Step 6: Update DNS Record to Point to CloudFront Distribution</strong>
+                        <p>In this final step, you will update your DNS records to point to the CloudFront distribution for secure access to your website.</p>
+                        <br>
+                        <p>In the AWS Console, search for Route 53 and select it from the list of services.</p>
+                        <p>From the Route 53 Dashboard, click on Hosted Zones.</p>
+                        <p>Select your domain name from the list of hosted zones.</p>
+                        <p>Click the checkbox next to your A record.</p>
+                        <p>In the Edit pane, modify the Route traffic to field to Alias to CloudFront distribution and click Save.</p>
+                        <br>
+                        <strong>Final Thoughts</strong>
+                        <p>Congratulations! You’ve successfully deployed a secure static website on AWS using S3, ACM for SSL, CloudFront for content delivery, and Route 53 for DNS management.</p>
+                        <br>
+                        <p>Feel free to create your own index.html page or use an HTML template to customize your website. Once everything is set up, your website should be accessible securely with HTTPS.</p>
+                        <br>
+                        <p>Happy Learning!</p>
+
+                </div>
+                
+
+            </div>
+        </div>
+
+    </div>
+    <!-- Footer -->
+    <div class="vg-footer">
+        <h1 class="text-center">Ashwin Sharma</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 py-3">
+                    <div class="footer-info">
+                        <p>Where to find me</p>
+                        <hr class="divider">
+                        <p class="fs-large fg-white">Ahmedabad, Gujarat</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 py-3">
+                    <div class="float-lg-right">
+                        <p>Follow me</p>
+                        <hr class="divider">
+                        <ul class="list-unstyled">
+                            <li><a href="http://www.linkedin.com/in/iamashwins">Linkedin</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Twitter</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 py-3">
+                    <div class="float-lg-right">
+                        <p>Contact me</p>
+                        <hr class="divider">
+                        <ul class="list-unstyled">
+                            <li>iamashwin073@gmail.com</li>
+                            <li>722-604-6826</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <!-- <div class="col-12 mb-3">
+          <h3 class="fw-normal text-center">Subscribe</h3>
+        </div>
+        <div class="col-lg-6">
+          <form class="mb-3">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Email address">
+              <input type="submit" class="btn btn-theme no-shadow" value="Subscribe">
+            </div>
+          </form>
+        </div> -->
+                <div class="col-12">
+                    <p class="text-center mb-0 mt-4">Copyright &copy;2023. All right reserved | This Website is made
+                        with <span class="ti-heart fg-theme-red"></span> by Ashwin Sharma</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer -->
+
+
+
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/vendor/owl-carousel/owl.carousel.min.js"></script>
+
+    <script src="../assets/vendor/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/isotope/isotope.pkgd.min.js"></script>
+
+    <script src="../assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+
+    <script src="../assets/vendor/fancybox/js/jquery.fancybox.min.js"></script>
+
+    <script src="../assets/vendor/wow/wow.min.js"></script>
+
+    <script src="../assets/vendor/animateNumber/jquery.animateNumber.min.js"></script>
+
+    <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+
+    <script src="../assets/js/google-maps.js"></script>
+
+    <script src="../assets/js/topbar-virtual.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+
+</body>
+
+</html>
