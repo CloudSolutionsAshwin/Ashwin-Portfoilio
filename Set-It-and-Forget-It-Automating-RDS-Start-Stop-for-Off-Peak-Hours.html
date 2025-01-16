@@ -130,7 +130,7 @@
                         <br>
                         <p>- Go to the <strong>Amazon RDS Console</strong> and select the database. Then, choose the DB instance that you want to add tags to.</p>
                         <p>- In the <strong>Tags</strong> section, click on <strong>Add tags.</strong></p>
-                        <br>- For the <strong>Tag Key</strong>, type AutoStart and AutoStop. For the <strong>Value</strong>, type True, then click on <strong>Add.</strong>
+                        <p>- For the <strong>Tag Key</strong>, type AutoStart and AutoStop. For the <strong>Value</strong>, type True, then click on <strong>Add.</strong></p>
                         <br>
                         <img src="../assets/img/work/image2.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                     </div>
@@ -286,6 +286,7 @@
                             <p>5. You can test your Lambda functions directly in the Lambda console by clicking on <strong>Test.</strong></p>
                             
                             <strong>Step 4.1 — Create an Amazon EventBridge Rule to Stop RDS Database.</strong>
+                            <br>
                             
                             <p>1. Amazon EventBridge rules will trigger the Lambda functions we created to stop or start the tagged database on a scheduled basis.</p>
                             
@@ -300,7 +301,7 @@
                             <p>6. For <strong>Function,</strong> choose the <strong>stop function</strong> you created (e.g., rdsstop).</p>
                             
                             <p>7. Click on <strong>Next,</strong> then review your settings and click <strong>Create</strong> to create the schedule.</p>
-                            
+                            <br>
                             <strong>Step 4.2 — Create an Amazon EventBridge Rule to Start RDS</strong>
                             
                             <p>1. Follow the same steps as before to create a rule that triggers the <strong>rdsstart</strong> Lambda function at your preferred scheduled time, such as <strong>8:00 AM.</strong></p>
