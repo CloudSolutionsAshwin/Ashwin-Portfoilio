@@ -90,42 +90,221 @@
                     <h5 class="fg-theme mb-3">By Ashwin Sharma</h5>
 
                     <div class="testi-content">
-                        <h3>Efficient Cloud Resource Management: How Automating RDS Start/Stop Can Save You Money</h3>
+                        <br>
+                        <strong>Efficient Cloud Resource Management: How Automating RDS Start/Stop Can Save You Money</strong>
+                        <br>
                         <p>Managing cloud resources efficiently is key to keeping costs under control while maximizing performance. One effective way to achieve this is by automating the start and stop schedules of your Amazon RDS instances using AWS Lambda. Here’s why this strategy is so valuable and how it can benefit your organization in straightforward terms.</p>
-
-                        <h3>Cost Optimization and Resource Efficiency: Saving Money by Turning Things Off</h3>
+                        <br>
+                        <strong>Cost Optimization and Resource Efficiency: Saving Money by Turning Things Off</strong>
+                        <br>
                         <p>Think of it like leaving the lights on in your home when you're not there — it wastes energy and increases your bills. Similarly, running your Amazon RDS instances 24/7, even when they’re not in use, can significantly drive up costs. By automating the process of shutting down these instances during off-hours or periods of inactivity, you can make a substantial dent in your cloud spending.</p>
-
-                        <h3>Automation and Flexibility: Letting AWS Lambda Handle the Repetitive Tasks</h3>
+                        <br>
+                        <strong>Automation and Flexibility: Letting AWS Lambda Handle the Repetitive Tasks</strong>
+                        <br>
                         <p>Manual tasks are often tedious and prone to human error. AWS Lambda helps solve this by automating the start/stop process for your RDS instances. Instead of remembering to turn them off at night or over weekends, Lambda takes care of it automatically, ensuring that your instances are only running when needed — all without requiring any intervention from you.</p>
-                        <h3>Scalability: Adjusting Automatically to Your Needs</h3>
+                        <br>
+                        <strong>Scalability: Adjusting Automatically to Your Needs</strong>
+                        <br>
                         <p>AWS Lambda’s ability to scale automatically is another major advantage. Whether you have a handful of RDS instances or a more complex, larger setup, Lambda adjusts to meet your needs. This flexibility ensures that your automation workflows continue to work seamlessly, no matter the size or complexity of your infrastructure.</p>
-                        <h3>Security and Compliance: Being Smart About When Resources Are Active</h3>
+                        <br>
+                        <strong>Security and Compliance: Being Smart About When Resources Are Active</strong>
+                        <br>
                         <p>Turning off RDS instances when they’re not in use also adds a layer of security to your cloud environment. With fewer instances running, there’s less surface area for potential cyber-attacks or vulnerabilities. Moreover, automating the start/stop schedule helps you stay compliant with internal policies and external regulations, ensuring that your resources are only accessible during the hours they should be..</p>
                         
-                        <h3>Architecture diagram:-</h3>
+                        <strong>Architecture diagram:-</strong>
+                        <br>
                         <img src="../assets/img/work/Blank diagram.png" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>     
                         
-                        <h3>What You Need Before You Start:-</h3>
+                        <strong>What You Need Before You Start:-</strong>
                         <p>Make sure you have the following:</p>
+                        <br>
                         <b>1. An AWS account</b> with admin access to Amazon RDS.<br>
                         <b>2. An RDS database instance</b> like “example-1”, which I already have set up.<br>
 
                         <img src="../assets/img/work/1_djxT-vDi0P94kEkk84XAOA.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                         
-                        <h3>Step 1 — Assign Tags to the RDS Database Instance</h3>
+                        <strong>Step 1 — Assign Tags to the RDS Database Instance</strong>
 
                         <img src="../assets/img/work/image1.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
 
-                        <p>Go to the <strong>Amazon RDS Console</strong> and select the database. Then, choose the DB instance that you want to add tags to.</p>
-                        <p>In the <strong>Tags</strong> section, click on <strong>Add tags.</strong></p>
-                        <p>For the <strong>Tag Key</strong>, type AutoStart and AutoStop. For the <strong>Value</strong>, type True, then click on <strong>Add.</strong></p>
+                        <p>- Go to the <strong>Amazon RDS Console</strong> and select the database. Then, choose the DB instance that you want to add tags to.</p>
+                        <br>
+                        <p>- In the <strong>Tags</strong> section, click on <strong>Add tags.</strong></p>
+                        <br>
+                        <p>- For the <strong>Tag Key</strong>, type AutoStart and AutoStop. For the <strong>Value</strong>, type True, then click on <strong>Add.</strong></p>
 
                         <img src="../assets/img/work/image2.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
                     </div>
-                        
+                        <br>
+                        <strong>Step 2 — Create an IAM Policy and Role for Lambda</strong>
+                        <p>Now, we’ll create an IAM policy and a role that allows AWS Lambda to start and stop your RDS instances.</p>
+                        <br>
+                        <p>1. Open the IAM console. In the left-hand menu under Access Management, click on Policies and then select Create Policy.</p>                    
                     
-                    
+                        <img src="../assets/img/work/image3.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                        <br>
+                        <strong>Step 2 — Create an IAM Policy and Role for Lambda</strong>
+                        <p>Next, we will create an IAM policy and role that allows AWS Lambda to start and stop the RDS instances</p>
+                        <br>
+                        <p>1. Open the IAM console and, from the left-hand navigation, click on Policies under Access Management. Then click on Create Policy.</p>
+                        <br>
+                        <p>2. In the Create Policy screen, choose the JSON tab to define a custom policy.</p>
+                        <p>3. Copy and paste the following JSON policy into the editor:</p>
+                        <br>
+                        <p>{
+                            “Version”: “2012–10–17”,
+                            “Statement”: [
+                            {
+                            “Sid”: “Statement1”,
+                            “Effect”: “Allow”,
+                            “Action”: [
+                            “rds:DescribeDBClusterParameters”,
+                            “rds:StartDBCluster”,
+                            “rds:StopDBCluster”,
+                            “rds:StopDBInstance”,
+                            “rds:StartDBInstance”,
+                            “rds:ListTagsForResource”,
+                            “rds:DescribeDBInstances”,
+                            “rds:DescribeSourceRegions”,
+                            “rds:DescribeDBClusterEndpoints”,
+                            “rds:DescribeDBClusters”
+                            ],
+                            “Resource”: “*”
+                            }
+                            ]
+                            }</p>
+                            <br>
+                            <p>After pasting the policy, click on Review Policy and give the policy a name (e.g., LambdaRDSStartStopPolicy), then click Create Policy.</p>
+                            <br>
+                            <strong>Step 3 — Create an IAM Role and Attach the Policy</strong>
+                            <p>Next, we will create an IAM role that Lambda can assume, and we will attach the policy you just created to this role.</p>
+                            <br>
+                            <p>1. Go to the <strong>IAM console.</strong></p>
+                            <br>
+                            <p>2. In the left-hand menu, click on Roles.</p>
+                            <br>
+                            <p>Click on <strong>Create role.</strong></p>
+                            <br>
+                            <p>Choose <strong>Lambda</strong> as the trusted service that will use this role.</p>
+                            <br>
+                            <p>Click on <strong>Next: Permissions</strong> to move to the next step.</p>
+                            <br>
+                            <p>Now, you have created an IAM role with the required permissions for your Lambda function to start and stop Amazon RDS instances.</p>
+                            <br>
+                            <p>When you create or update your Lambda function in the AWS Lambda console, make sure to assign this IAM role to the function.</p>
+                            <br>
+                            
+                            <strong>Create a Lambda Function to Stop the Database</strong>
+                            <p>We will create two Lambda functions: one for stopping the database and another for starting it. First, let’s focus on creating the function to stop the database.</p>
+                            <br>
+                            <p>1. Open the <strong>Lambda console.</strong> In the left-hand menu, click on Functions, then click on <strong>Create function.</strong></p>
+
+                            <br>
+                            <img src="../assets/img/work/image4.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                            <br>
+                            <p>1. Select <strong>Author from scratch.</strong></p>
+                            <br>
+                            <p>Give your function a name (e.g., StopRDSInstanceFunction), choose <strong>Python</strong> as the runtime, and under <strong>Existing role,</strong> select the IAM role you created earlier (e.g., LambdaRDSStartStopRole).</p>
+                            <br>
+                            <p>On the <strong>Function details</strong> page, go to the <strong>Function code</strong> section.</p>
+                            <br>
+                            <p>Delete the default sample code.</p>
+                            <br>
+                            <p>Copy and paste the following code to stop the RDS instance into the code editor:</p>
+                            <br>
+                            <p>import boto3
+                                rds = boto3.client(‘rds’)
+                                
+                                def lambda_handler(event, context):
+                                
+                                # Stop DB instances
+                                dbs = rds.describe_db_instances()
+                                for db in dbs[‘DBInstances’]:
+                                # Check if the DB instance is not already stopped
+                                if (db[‘DBInstanceStatus’] == ‘available’):
+                                try:
+                                GetTags = rds.list_tags_for_resource(ResourceName=db[‘DBInstanceArn’])[‘TagList’]
+                                for tags in GetTags:
+                                # If the tag “AutoStop=True” is set for the instance, stop it
+                                if(tags[‘Key’] == ‘AutoStop’ and tags[‘Value’] == ‘True’):
+                                result = rds.stop_db_instance(DBInstanceIdentifier=db[‘DBInstanceIdentifier’])
+                                print (“Stopping instance: {0}.”.format(db[‘DBInstanceIdentifier’]))
+                                except Exception as e:
+                                print (“Cannot stop instance {0}.”.format(db[‘DBInstanceIdentifier’]))
+                                print(e)
+                                
+                                if __name__ == “__main__”:
+                                lambda_handler(None, None)</p>
+                            <br>
+                            <img src="../assets/img/work/image5.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                            <br>
+                            <p>Click on <strong>Deploy</strong> to create and save your Lambda function.</p>
+                            <br>
+                            <p>Go to the <strong>Configuration</strong> tab, then select <strong>Environment Variables.</strong> Click on Edit and add the environment variables as shown below.</p>
+                            <br>
+                            <img src="../assets/img/work/image6.webp" style="max-width: 100%; height: auto; display: block; margin: 20px auto;"/>
+                            <br>
+                            <p>You can test your Lambda functions directly in the Lambda console by clicking on <strong>Test.</strong></p>
+                            <br>
+                            <strong>Create a Lambda Function to Start the RDS Database</strong>
+                            <br>
+                            <p>Follow the same steps as before, but this time, create a new Lambda function that will start the RDS instances.</p>
+                            <br>
+                            <p>Copy and paste the code to start RDS instances into the code editor.</p>
+                            <br>
+                            <p>import boto3
+                                rds = boto3.client(‘rds’)
+                                
+                                def lambda_handler(event, context):
+                                
+                                # Start DB Instances
+                                dbs = rds.describe_db_instances()
+                                for db in dbs[‘DBInstances’]:
+                                # Check if the DB instance is stopped. If so, start it.
+                                if (db[‘DBInstanceStatus’] == ‘stopped’):
+                                try:
+                                GetTags = rds.list_tags_for_resource(ResourceName=db[‘DBInstanceArn’])[‘TagList’]
+                                for tags in GetTags:
+                                # If the tag “AutoStart=True” is set for the instance, start it
+                                if(tags[‘Key’] == ‘AutoStart’ and tags[‘Value’] == ‘True’):
+                                result = rds.start_db_instance(DBInstanceIdentifier=db[‘DBInstanceIdentifier’])
+                                print (“Starting instance: {0}.”.format(db[‘DBInstanceIdentifier’]))
+                                except Exception as e:
+                                print (“Cannot start instance {0}.”.format(db[‘DBInstanceIdentifier’]))
+                                print(e)
+                                
+                                if __name__ == “__main__”:
+                                lambda_handler(None, None)
+                                
+                                This code checks all RDS instances and starts those with the tag AutoStart=True.</p>
+                                <br>
+                            <p>3. Click on <strong>Deploy</strong> to create and save your Lambda function.</p>
+                            <br>
+                            <p>4. Go to the <strong>Configuration</strong> tab, then click on <strong>Environment Variables.</strong> Select <strong>Edit</strong> and add the environment variables as shown below.</p>
+                            <br>
+                            <p>5. You can test your Lambda functions directly in the Lambda console by clicking on <strong>Test.</strong></p>
+                            <br>
+                            <p>Step 4.1 — Create an Amazon EventBridge Rule to Stop RDS Database.</p>
+                            <br>
+                            <p>1. Amazon EventBridge rules will trigger the Lambda functions we created to stop or start the tagged database on a scheduled basis.</p>
+                            <br>
+                            <p>2. Enter the rule details, such as the name and description. Choose <strong>Rule type</strong> as <strong>Schedule</strong>, then click on <strong>Continue.</strong></p>
+                            <br>
+                            <p>In the <strong>Schedule pattern</strong> section, select <strong>Recurring schedule</strong> and choose <strong>Cron-based schedule</strong> for the schedule type.</p>
+                            <br>
+                            <p>Enter the following <strong>Cron expression:</strong> (0 20 * * ? *). This schedule will trigger every day at 8:00 PM. Afterward, click on <strong>Next.</strong></p>
+                            <br>
+                            <p>In the <strong>Select Targets</strong> section, choose <strong>AWS Lambda</strong> and select <strong>Invoke.</strong></p>
+                            <br>
+                            <p>For <strong>Function,</strong> choose the <strong>stop function</strong> you created (e.g., rdsstop).</p>
+                            <br>
+                            <p>Click on <strong>Next,</strong> then review your settings and click <strong>Create</strong> to create the schedule.</p>
+                            <br>
+                            <strong>Step 4.2 — Create an Amazon EventBridge Rule to Start RDS</strong>
+                            <br>
+                            <p>Follow the same steps as before to create a rule that triggers the <strong>rdsstart</strong> Lambda function at your preferred scheduled time, such as <strong>8:00 AM.</strong></p>
+                            <br>
+                            <p>Happy learning!</p>
                 </div>
                 
 
